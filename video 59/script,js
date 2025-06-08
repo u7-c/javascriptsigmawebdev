@@ -1,0 +1,46 @@
+function faultyCalculator(num1, num2, operator) {
+    // Generate a random number between 0 and 1
+    let randomChance = Math.random();
+
+    // Check if we should perform a wrong operation (10% chance)
+    let isFaulty = randomChance < 0.1;
+
+    if (isFaulty) {
+        console.log("⚠️ Faulty mode activated!");
+
+        switch (operator) {
+            case '+':
+                return num1 - num2;
+            case '*':
+                return num1 + num2;
+            case '-':
+                return num1 / num2;
+            case '/':
+                return num1 ** num2;
+            default:
+                return "Invalid operator!";
+        }
+    } else {
+        // Normal operation
+        switch (operator) {
+            case '+':
+                return num1 + num2;
+            case '*':
+                return num1 * num2;
+            case '-':
+                return num1 - num2;
+            case '/':
+                return num1 / num2;
+            default:
+                return "Invalid operator!";
+        }
+    }
+}
+
+// Example usage:
+let num1 = 10;
+let num2 = 5;
+let operator = '+'; // Try with '*', '-', or '/' too!
+
+let result = faultyCalculator(num1, num2, operator);
+console.log(`Result of ${num1} ${operator} ${num2} = ${result}`);
