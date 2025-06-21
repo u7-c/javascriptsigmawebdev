@@ -5,3 +5,12 @@ type of null is object
 === value and type
 
 temary operator : a>b?(a-b):(b-a)
+
+🛠️ Common DOM Methods (You’ll use these A LOT)
+What You Want To Do	JavaScript Code
+Grab an element by ID	    document.getElementById("myId")
+Grab by class	            document.getElementsByClassName("myClass")
+Grab using CSS selector	    document.querySelector(".cool")
+Change text	                element.textContent = "New text!"
+Change style	            element.style.color = "hotpink"
+Respond to clicks	        element.addEventListener("click", () => { alert("Clicked!") })
