@@ -14,11 +14,12 @@ app.post('/', (req, res) => {
     console.log("this is a put request");
     res.send('hello world put');
     //this is hits on my terminal when i open mypage.html on my browser and hits a post request
-}).listen(port, () => {
+})
+app.get("/index",(req,res)=>{
+    console.log("HEY ITS INDEX");
+    res.sendFile('templates/index.html',{root:__dirname})//this returns the full directory path of the html file
+})
+app.listen(port, () => {
     
     console.log(`🚀 Server listening at http://localhost:${port}`);
 });
-app.get("/index",(res,req)=>{
-    console.log("HEY ITS INDEX");
-    res.sendFile('templates/index.html')
-})
